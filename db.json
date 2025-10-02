@@ -1,0 +1,291 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Alex Johnson",
+      "username": "alexj",
+      "email": "alex.johnson@techcorp.com",
+      "address": {
+        "street": "123 Tech Street",
+        "suite": "Suite 100",
+        "city": "Silicon Valley",
+        "zipcode": "94000",
+        "geo": {
+          "lat": "37.4419",
+          "lng": "-122.1430"
+        }
+      },
+      "phone": "555-0123",
+      "website": "alexjohnson.dev",
+      "company": {
+        "name": "TechCorp Solutions",
+        "catchPhrase": "Innovating the future of technology",
+        "bs": "cutting-edge software solutions"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Sarah Chen",
+      "username": "sarahc",
+      "email": "sarah.chen@designstudio.com",
+      "address": {
+        "street": "456 Creative Ave",
+        "suite": "Floor 3",
+        "city": "New York",
+        "zipcode": "10001",
+        "geo": {
+          "lat": "40.7128",
+          "lng": "-74.0060"
+        }
+      },
+      "phone": "555-0456",
+      "website": "sarahchen.design",
+      "company": {
+        "name": "Creative Design Studio",
+        "catchPhrase": "Design that speaks volumes",
+        "bs": "user-centered design experiences"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Michael Rodriguez",
+      "username": "mikerod",
+      "email": "m.rodriguez@dataanalytics.com",
+      "address": {
+        "street": "789 Data Drive",
+        "suite": "Building B",
+        "city": "Austin",
+        "zipcode": "73301",
+        "geo": {
+          "lat": "30.2672",
+          "lng": "-97.7431"
+        }
+      },
+      "phone": "555-0789",
+      "website": "mikerodriguez.analytics",
+      "company": {
+        "name": "Data Analytics Pro",
+        "catchPhrase": "Turning data into insights",
+        "bs": "advanced analytics and machine learning"
+      }
+    },
+    {
+      "id": 4,
+      "name": "Emily Watson",
+      "username": "emilyw",
+      "email": "emily.watson@cloudservices.com",
+      "address": {
+        "street": "321 Cloud Lane",
+        "suite": "Penthouse",
+        "city": "Seattle",
+        "zipcode": "98101",
+        "geo": {
+          "lat": "47.6062",
+          "lng": "-122.3321"
+        }
+      },
+      "phone": "555-0321",
+      "website": "emilywatson.cloud",
+      "company": {
+        "name": "CloudServices Inc",
+        "catchPhrase": "Scaling businesses to the cloud",
+        "bs": "enterprise cloud infrastructure"
+      }
+    },
+    {
+      "id": 5,
+      "name": "David Kim",
+      "username": "davidk",
+      "email": "david.kim@mobilefirst.com",
+      "address": {
+        "street": "654 Mobile Blvd",
+        "suite": "App Center",
+        "city": "San Francisco",
+        "zipcode": "94102",
+        "geo": {
+          "lat": "37.7749",
+          "lng": "-122.4194"
+        }
+      },
+      "phone": "555-0654",
+      "website": "davidkim.mobile",
+      "company": {
+        "name": "MobileFirst Development",
+        "catchPhrase": "Mobile experiences that matter",
+        "bs": "cross-platform mobile applications"
+      }
+    }
+  ],
+  "posts": [
+    {
+      "title": "Mobile-First Design Principles",
+      "body": "Designing for mobile devices first ensures better user experience across all platforms. Progressive enhancement, touch-friendly interfaces, and performance considerations are key factors.",
+      "userId": 2,
+      "id": 9
+    },
+    {
+      "title": "Serverless Computing Benefits",
+      "body": "AWS Lambda, Vercel Functions, and Netlify Functions are revolutionizing backend development. Pay-per-execution, automatic scaling, and reduced infrastructure management are game changers.",
+      "userId": 3,
+      "id": 10
+    },
+    {
+      "title": "GraphQL vs REST APIs",
+      "body": "GraphQL offers flexible data fetching, strong typing, and real-time subscriptions. However, REST APIs remain simpler for basic CRUD operations and have better caching support.",
+      "userId": 4,
+      "id": 11
+    },
+    {
+      "title": "Docker Container Best Practices",
+      "body": "Multi-stage builds, layer caching, security scanning, and minimal base images are essential for production Docker deployments. Container orchestration with Kubernetes adds complexity but enables scalability.",
+      "userId": 5,
+      "id": 12
+    },
+    {
+      "title": "TypeScript Advanced Features",
+      "body": "Conditional types, mapped types, template literal types, and utility types unlock TypeScript's full potential. These features enable type-safe APIs and better developer experience.",
+      "userId": 1,
+      "id": 13
+    },
+    {
+      "title": "Web Performance Metrics",
+      "body": "Core Web Vitals, Lighthouse scores, and real user monitoring help optimize user experience. LCP, FID, and CLS measurements directly impact SEO rankings and conversion rates.",
+      "userId": 2,
+      "id": 14
+    },
+    {
+      "title": "Cybersecurity for Developers",
+      "body": "OWASP Top 10, input validation, authentication, authorization, and secure coding practices are developer responsibilities. Security should be built into applications, not bolted on later.",
+      "userId": 3,
+      "id": 15
+    },
+    {
+      "title": "Cloud Migration Strategies",
+      "body": "Lift-and-shift, refactoring, and cloud-native approaches each have trade-offs. Cost optimization, security considerations, and team training are critical success factors.",
+      "userId": 4,
+      "id": 16
+    },
+    {
+      "title": "AI-Powered Code Generation",
+      "body": "GitHub Copilot, ChatGPT, and other AI tools are transforming software development. Understanding their capabilities and limitations helps developers leverage AI effectively.",
+      "userId": 5,
+      "id": 17
+    },
+    {
+      "title": "Progressive Web Apps (PWAs)",
+      "body": "Service workers, app manifests, and offline functionality bring native app experiences to web browsers. PWAs offer installation, push notifications, and background sync capabilities.",
+      "userId": 1,
+      "id": 18
+    },
+    {
+      "title": "Blockchain Development Basics",
+      "body": "Smart contracts, decentralized applications (dApps), and Web3 integration are expanding beyond cryptocurrency. Ethereum, Solidity, and IPFS enable new business models.",
+      "userId": 2,
+      "id": 19
+    },
+    {
+      "title": "DevOps Culture and Practices",
+      "body": "CI/CD pipelines, infrastructure as code, monitoring, and collaboration between development and operations teams accelerate software delivery while maintaining reliability.",
+      "userId": 3,
+      "id": 20
+    },
+    {
+      "title": "his",
+      "body": "this\n",
+      "userId": 1,
+      "id": 21
+    },
+    {
+      "title": "sds",
+      "body": "sds",
+      "userId": 1,
+      "id": 22
+    }
+  ],
+  "comments": [
+    {
+      "id": 8,
+      "postId": 9,
+      "name": "Mobile performance matters",
+      "email": "uxdesigner@example.com",
+      "body": "Mobile-first design isn't just about responsive layouts. Consider touch targets, loading times, and data usage too."
+    },
+    {
+      "id": 9,
+      "postId": 10,
+      "name": "Serverless cold starts",
+      "email": "clouddev@example.com",
+      "body": "Cold starts can be an issue with serverless functions. Consider using provisioned concurrency for critical endpoints."
+    },
+    {
+      "id": 10,
+      "postId": 11,
+      "name": "GraphQL complexity",
+      "email": "apidev@example.com",
+      "body": "GraphQL is powerful but adds complexity. Make sure your team understands query optimization and N+1 problem solutions."
+    },
+    {
+      "id": 11,
+      "postId": 12,
+      "name": "Docker security",
+      "email": "devops@example.com",
+      "body": "Always scan your container images for vulnerabilities. Use distroless images when possible to reduce attack surface."
+    },
+    {
+      "id": 12,
+      "postId": 13,
+      "name": "TypeScript learning curve",
+      "email": "jsdev@example.com",
+      "body": "These advanced features take time to master, but they're worth it. Start with utility types before moving to conditional types."
+    },
+    {
+      "id": 13,
+      "postId": 14,
+      "name": "Core Web Vitals impact",
+      "email": "seoexpert@example.com",
+      "body": "We've seen direct correlation between Core Web Vitals improvements and search ranking increases. Performance is crucial for SEO."
+    },
+    {
+      "id": 14,
+      "postId": 15,
+      "name": "Security first mindset",
+      "email": "security@example.com",
+      "body": "Security should be considered from day one of development, not as an afterthought. Threat modeling helps identify risks early."
+    },
+    {
+      "id": 15,
+      "postId": 16,
+      "name": "Cloud migration experience",
+      "email": "cloudarchitect@example.com",
+      "body": "We went with a hybrid approach - lift-and-shift for legacy systems, refactoring for new features. It worked well for our timeline."
+    },
+    {
+      "id": 16,
+      "postId": 17,
+      "name": "AI coding assistants",
+      "email": "programmer@example.com",
+      "body": "AI tools are great for boilerplate code and learning new languages, but always review and understand the generated code."
+    },
+    {
+      "id": 17,
+      "postId": 18,
+      "name": "PWA adoption",
+      "email": "webdev@example.com",
+      "body": "PWAs are game-changers for user engagement. The install prompts and offline functionality significantly improve user retention."
+    },
+    {
+      "id": 18,
+      "postId": 19,
+      "name": "Web3 development",
+      "email": "blockchain@example.com",
+      "body": "Smart contract development requires different thinking. Gas optimization and security audits are critical for production deployment."
+    },
+    {
+      "id": 19,
+      "postId": 20,
+      "name": "DevOps transformation",
+      "email": "teamlead@example.com",
+      "body": "DevOps is more about culture than tools. Breaking down silos between teams was our biggest challenge and greatest success."
+    }
+  ]
+}

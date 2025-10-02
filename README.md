@@ -1,3 +1,132 @@
+Learning Redux (Next.js + RTK + RTK Query)
+
+**A small Next.js app showing the basics of Redux Toolkit, createAsyncThunk, and RTK Query with a local JSON Server.**
+
+Quick start
+- Install: `npm i`
+- Run API + App together: `npm run dev:full`
+  - App: `http://localhost:3000`
+  - API: `http://localhost:3001`
+
+Scripts
+- `npm run dev` – Next.js dev server
+- `npm run json-server` – JSON Server (uses `db.json`)
+- `npm run dev:full` – run both (via concurrently)
+
+Tech
+- Next.js App Router
+- Redux Toolkit (`@reduxjs/toolkit`) + React Redux
+- RTK Query (data fetching)
+- JSON Server (mock REST API)
+
+Folders
+- `redux/store.js` – sets up store and middleware
+- `redux/usersSlice.js` – slice + `createAsyncThunk`
+- `redux/counterSlice.js` – basic slice reducers/actions
+- `redux/postsApi.js` – RTK Query API (queries, mutations, optimistic updates)
+- `app/` – pages/components
+- `db.json` – users, posts, comments data
+
+Redux Toolkit basics
+- Create a slice with state + reducers
+- Export actions from slice (auto-generated)
+- Add the slice reducer to the store
+
+Example (slice)
+```js
+import { createSlice } from '@reduxjs/toolkit'
+
+const counterSlice = createSlice({
+  name: 'counter',
+  initialState: { value: 0 },
+  reducers: {
+    increment: (state) => { state.value += 1 },
+    decrement: (state) => { state.value -= 1 },
+  },
+})
+export const { increment, decrement } = counterSlice.actions
+export default counterSlice.reducer
+```
+
+Async with createAsyncThunk
+- Use for imperative async flows
+- Handles pending/fulfilled/rejected
+
+```js
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+
+export const fetchUsers = createAsyncThunk('users/fetch', async () => {
+  const res = await fetch('http://localhost:3001/users')
+  return await res.json()
+})
+
+const usersSlice = createSlice({
+  name: 'users',
+  initialState: { items: [], status: 'idle', error: null },
+  reducers: {},
+  extraReducers: (builder) => {
+    builder
+      .addCase(fetchUsers.pending, (state) => { state.status = 'loading' })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        state.status = 'succeeded'
+        state.items = action.payload
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        state.status = 'failed'
+        state.error = action.error?.message || 'Error'
+      })
+  }
+})
+export default usersSlice.reducer
+```
+
+RTK Query (posts)
+- Declarative endpoints (queries + mutations)
+- Auto hooks: `useGetPostsQuery`, `useCreatePostMutation`, etc.
+- Optimistic updates for create/update/delete
+
+```js
+import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+export const postsApi = createApi({
+  reducerPath: 'postsApi',
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3001/' }),
+  endpoints: (builder) => ({
+    getPosts: builder.query({ query: () => 'posts' }),
+    createPost: builder.mutation({
+      query: (body) => ({ url: 'posts', method: 'POST', body }),
+      async onQueryStarted(newPost, { dispatch, queryFulfilled }) {
+        const tempId = Math.random().toString(36).slice(2)
+        const patch = dispatch(postsApi.util.updateQueryData('getPosts', undefined, d => {
+          d.unshift({ id: tempId, ...newPost })
+        }))
+        try {
+          const { data } = await queryFulfilled
+          dispatch(postsApi.util.updateQueryData('getPosts', undefined, d => {
+            const i = d.findIndex(p => p.id === tempId)
+            if (i !== -1) d[i] = data
+          }))
+        } catch { patch.undo() }
+      }
+    }),
+  })
+})
+```
+
+Hooks usage
+```js
+const { data: posts = [], isLoading } = useGetPostsQuery()
+const [createPost] = useCreatePostMutation()
+```
+
+Caching & freshness
+- In this project, tag invalidation is off; we use optimistic updates
+- If you need auto-refresh, enable tags or `refetchOnFocus/refetchOnReconnect`
+
+JSON Server
+- Base URL: `http://localhost:3001`
+- Endpoints: `/users`, `/posts`, `/comments`
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
